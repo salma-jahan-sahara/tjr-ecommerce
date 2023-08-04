@@ -13,7 +13,21 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('image')->nullable();
+            $table->string('gender');
+            $table->string('phone');
+            $table->string('email')->nullable();
+            $table->text('home_address');
+            $table->text('office_address')->nullable();
+            $table->text('other_address')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('referred_by')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->string('ip_address')->nullable();
         });
     }
 
