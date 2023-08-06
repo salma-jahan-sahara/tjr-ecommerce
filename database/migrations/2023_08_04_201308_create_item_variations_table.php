@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('item_variations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('sku', 10)->nullable();
+            $table->string('brief', 255)->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->unsignedBigInteger('item_id');

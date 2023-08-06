@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('shop_products', function (Blueprint $table) {$table->id();
             $table->string('name');
+            $table->string('sku', 10)->nullable();
+            $table->string('brief', 255)->nullable();
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('variation_id')->nullable();
             $table->string('batch_no')->nullable();
