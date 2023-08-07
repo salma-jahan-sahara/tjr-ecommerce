@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('approved_by')->nullable();
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->softDeletes(); // Add soft delete column

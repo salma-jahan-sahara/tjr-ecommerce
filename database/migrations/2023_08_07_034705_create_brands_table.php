@@ -11,19 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('sku', 10)->nullable();
-            $table->string('brief', 255)->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('has_variation')->default('no');
-            $table->unsignedBigInteger('shop_id')->nullable();
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('subcategory_id')->nullable();
-            $table->integer('selling_price')->nullable();
-            $table->integer('purchase_price')->nullable();
             $table->integer('stock_in')->default(0);
             $table->integer('stock_out')->default(0);
             $table->integer('stock_available')->default(0);
@@ -38,10 +30,7 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->softDeletes(); // Add soft delete column
             $table->unsignedBigInteger('deleted_by')->nullable();
-
-            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('set null');
+            
             $table->foreign('approved_by')->references('id')->on('officials')->onDelete('set null');
             $table->foreign('created_by')->references('id')->on('login_credentials')->onDelete('set null');
             $table->foreign('updated_by')->references('id')->on('login_credentials')->onDelete('set null');
@@ -54,6 +43,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('brands');
     }
 };

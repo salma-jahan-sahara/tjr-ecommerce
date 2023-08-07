@@ -17,8 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('variation_id')->nullable();
             $table->string('image');
             $table->unsignedBigInteger('approved_by')->nullable();
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->softDeletes(); // Add soft delete column

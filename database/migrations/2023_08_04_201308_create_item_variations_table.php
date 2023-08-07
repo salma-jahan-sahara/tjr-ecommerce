@@ -33,8 +33,7 @@ return new class extends Migration
             $table->integer('total_rate')->default(0);
             $table->unsignedInteger('total_rated_person')->default(0);
             $table->unsignedBigInteger('approved_by')->nullable();
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->softDeletes(); // Add soft delete column
