@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('has_variation')->default('no');
+            $table->unsignedBigInteger('brand_id')->nullable();
             $table->unsignedBigInteger('shop_id')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('subcategory_id')->nullable();
@@ -39,6 +40,7 @@ return new class extends Migration
             $table->softDeletes(); // Add soft delete column
             $table->unsignedBigInteger('deleted_by')->nullable();
 
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('set null');

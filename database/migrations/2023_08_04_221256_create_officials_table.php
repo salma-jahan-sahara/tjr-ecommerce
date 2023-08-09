@@ -40,8 +40,6 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
-
-            $table->foreign('variation_id')->references('id')->on('item_variations')->onDelete('set null');
         });
     }
 
