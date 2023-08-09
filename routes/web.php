@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('navbar', [OpenController::class, 'navbar'])->name('navbar');
+
 Route::get('category-subcategory', [OpenController::class, 'categorySubcategory'])->name('CategorySubcategory');

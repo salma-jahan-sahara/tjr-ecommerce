@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->text('address')->nullable();
             $table->integer('stock_in')->default(0);
             $table->integer('stock_out')->default(0);
             $table->integer('stock_available')->default(0);
@@ -30,7 +31,7 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->softDeletes(); // Add soft delete column
             $table->unsignedBigInteger('deleted_by')->nullable();
-            
+
             $table->foreign('approved_by')->references('id')->on('officials')->onDelete('set null');
             $table->foreign('created_by')->references('id')->on('login_credentials')->onDelete('set null');
             $table->foreign('updated_by')->references('id')->on('login_credentials')->onDelete('set null');
