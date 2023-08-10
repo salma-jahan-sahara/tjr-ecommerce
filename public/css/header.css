@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.brand__logo{
+    height: 85px;
+}
+.nav__bg{
+    background: #000000;
+}
+.nav-link{
+    padding-left: 38px !important;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: #E5AF37;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #d5b97c!important;
+}
+.navbar-nav .dropdown-menu{
+    border-radius: 0;
+}
+
+.btn-danger:hover{
+    background: #d5b97c;
+    color: #000;
+}
+.btn-danger{
+    width:100px;
+    background-color: #b07d10;
+    color: #290505!important;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    align-items: center;
+}
+/* search field */
+.icon__search{
+    color: #b07d10;
+    border-radius: 50px;
+    /* box-shadow: 1px solid #b07d10; */
+}
+.icon__search:hover{
+    color: #c1a770;
+}
+#search{
+    width: 430px;
+    border-radius: 50px;
+}
+/* 
+.search{
+    position: relative;
+    height: 60px;
+    width: 60px; 
+    background: #000;
+    border-radius: 60px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 1px #b07d10;
+}
+.search .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+.search .icon::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #b07d10;
+    border-radius: 50%;
+    transform: translate(-4px, -4px);
+
+}
+.search .icon::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #b07d10;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+.search.active{
+    width: 400px;
+    background: #fff;
+
+} */
+.dropdown .btn-secondary{
+    background: #b07d10!important;
+    width: 200px;
+}
+.dropdown-menu{
+    background: #c1a770!important;
+}
+.dropdown-item{
+    color: #000!important;
+}
+/* .dropdown-menu .dropdown-item{
+    color: #000!important;
+} */
+@media screen and (max-width:700px) {
+    .form-control{
+        display: none;
+    }
+    .navbar-nav{
+        flex-direction: row;
+    }
+    
+}

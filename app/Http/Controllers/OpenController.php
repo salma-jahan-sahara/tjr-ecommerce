@@ -32,7 +32,7 @@ class OpenController extends Controller
 
         $shops = Shop::all();
         $brands = Brand::all();
-        return ['categories' => $categories, 'shops' => $shops, 'brands' => $brands];
+        return view('navbar', compact('categories', 'shops', 'brands'));
 
     }
 }
