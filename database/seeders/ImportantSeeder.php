@@ -15,18 +15,26 @@ class ImportantSeeder extends Seeder
      */
     public function run(): void
     {
-        OfficialRole::insert([
-            'id' => 1,
-            'name' => 'Super Admin',
-            'description' => 'Super Admin has all access to do.',
-            'created_at' => '2023-08-06 15:50:06',
-            'updated_at' => '2023-08-06 15:50:06',
-        ]);
+        $entry = OfficialRole::where('name', 'Super Admin')->first();
 
-        Official::insert([
-            [
-                'id' => 2,
-                'name' => 'Dev Admin',
+        if(!$entry)
+        {
+            OfficialRole::insert([
+                'id' => 1,
+                'name' => 'Super Admin',
+                'description' => 'Super Admin has all access to do.',
+                'created_at' => '2023-08-06 15:50:06',
+                'updated_at' => '2023-08-06 15:50:06',
+            ]);
+        }
+
+        $entry = Official::where('name', 'Developer')->first();
+
+        if(!$entry)
+        {
+            Official::insert([
+                'id' => 0,
+                'name' => 'Developer',
                 'image' => NULL,
                 'role_id' => 1,
                 'gender' => 'Other',
@@ -54,8 +62,14 @@ class ImportantSeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => NULL,
-            ],
-            [
+            ]);
+        }
+
+        $entry = Official::where('name', 'Admin')->first();
+
+        if(!$entry)
+        {
+            Official::insert([
                 'id' => 1,
                 'name' => 'Admin',
                 'image' => null,
@@ -85,24 +99,35 @@ class ImportantSeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => null,
-            ],
-        ]);
+            ]);
+        }
 
-        LoginCredential::insert([
-            [
-                'id' => 2,
+
+        $entry = LoginCredential::where('user_id', 0)->first();
+
+        if(!$entry)
+        {
+            LoginCredential::insert([
+                'id' => 0,
                 'role' => 'official',
                 'user_id' => 0,
                 'email' => 'dev@tjr.com',
                 'phone' => '01840208832',
-                'username' => 'sahara',
+                'username' => 'developer',
                 'password' => '12345678',
                 'verified' => 'yes',
                 'status' => 'active',
                 'created_at' => '2023-08-06 16:09:56',
                 'updated_at' => '2023-08-06 16:09:56',
-            ],
-            [
+            ]);
+        }
+
+
+        $entry = LoginCredential::where('user_id', 1)->first();
+
+        if(!$entry)
+        {
+            LoginCredential::insert([
                 'id' => 1,
                 'role' => 'official',
                 'user_id' => 1,
@@ -114,7 +139,7 @@ class ImportantSeeder extends Seeder
                 'status' => 'active',
                 'created_at' => '2023-08-06 16:09:56',
                 'updated_at' => '2023-08-06 16:09:56',
-            ],
-        ]);
+            ]);
+        }
     }
 }

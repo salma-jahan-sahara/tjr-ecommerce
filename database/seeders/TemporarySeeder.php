@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\LoginCredential;
+use App\Models\ShopOwner;
 use App\Models\Subcategory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,18 +17,10 @@ class TemporarySeeder extends Seeder
      */
     public function run(): void
     {
-
-        // Example::insert([
-        //     'id' => 1,
-        //     'name' => 'Super Admin',
-        //     'description' => 'Super Admin has all access to do.',
-        //     'created_at' => '2023-08-06 15:50:06',
-        //     'updated_at' => '2023-08-06 15:50:06',
-        // ]);
-
-
-        Category::insert([
-            [
+        $entry = Category::where('id', 1)->first();
+        if(!$entry)
+        {
+            Category::insert([
                 'id' => 1,
                 'name' => 'Grocery',
                 'description' => 'Day to day life needed grocery items.',
@@ -38,8 +32,13 @@ class TemporarySeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_at' => NULL,
                 'deleted_by' => NULL,
-            ],
-            [
+            ]);
+        }
+
+        $entry = Category::where('id', 2)->first();
+        if(!$entry)
+        {
+            Category::insert([
                 'id' => 2,
                 'name' => 'Fashion & Clothing',
                 'description' => 'Find the latest fashion trends and stylish clothing items.',
@@ -51,12 +50,13 @@ class TemporarySeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_at' => NULL,
                 'deleted_by' => NULL,
-            ],
-        ]);
+            ]);
+        }
 
-
-        Subcategory::insert([
-            [
+        $entry = Subcategory::where('id', 1)->first();
+        if(!$entry)
+        {
+            Subcategory::insert([
                 'id' => 1,
                 'name' => 'Vegetables',
                 'description' => 'Vegetables Subcategory Under Grocery Category',
@@ -69,8 +69,13 @@ class TemporarySeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_at' => NULL,
                 'deleted_by' => NULL,
-            ],
-            [
+            ]);
+        }
+
+        $entry = Subcategory::where('id', 2)->first();
+        if(!$entry)
+        {
+            Subcategory::insert([
                 'id' => 2,
                 'name' => 'Men\'s Collection',
                 'description' => 'Men\'s Collection Subcategory Under Fashion & Clothing Category',
@@ -83,8 +88,13 @@ class TemporarySeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_at' => NULL,
                 'deleted_by' => NULL,
-            ],
-            [
+            ]);
+        }
+
+        $entry = Subcategory::where('id', 3)->first();
+        if(!$entry)
+        {
+            Subcategory::insert([
                 'id' => 3,
                 'name' => 'Women\'s Outfit',
                 'description' => 'Women\'s Outfit Subcategory Under Fashion & Clothing Category',
@@ -97,8 +107,13 @@ class TemporarySeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_at' => NULL,
                 'deleted_by' => NULL,
-            ],
-            [
+            ]);
+        }
+
+        $entry = Subcategory::where('id', 4)->first();
+        if(!$entry)
+        {
+            Subcategory::insert([
                 'id' => 4,
                 'name' => 'Snacks',
                 'description' => 'Snacks Subcategory Under Grocery Category',
@@ -111,11 +126,13 @@ class TemporarySeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_at' => NULL,
                 'deleted_by' => NULL,
-            ],
-        ]);
+            ]);
+        }
 
-        Brand::insert([
-            [
+        $entry = Brand::where('id', 1)->first();
+        if(!$entry)
+        {
+            Brand::insert([
                 'id' => 1,
                 'name' => 'Gucci',
                 'description' => 'Gucci is a fashion brand for women\'s outfit.',
@@ -133,8 +150,13 @@ class TemporarySeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => 1,
-            ],
-            [
+            ]);
+        }
+
+        $entry = Brand::where('id', 2)->first();
+        if(!$entry)
+        {
+            Brand::insert([
                 'id' => 2,
                 'name' => 'Lays',
                 'description' => 'Lays is a chips brand for snacks item.',
@@ -152,8 +174,13 @@ class TemporarySeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => 1,
-            ],
-            [
+            ]);
+        }
+
+        $entry = Brand::where('id', 3)->first();
+        if(!$entry)
+        {
+            Brand::insert([
                 'id' => 3,
                 'name' => 'Rayban',
                 'description' => 'Rayban is a sunglass brand for Men\'s Item.',
@@ -171,8 +198,55 @@ class TemporarySeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => 1,
-            ]
+            ]);
+        }
 
-        ]);
+        $entry = ShopOwner::where('id', 1)->first();
+        if(!$entry)
+        {
+            ShopOwner::insert([
+                'id' => 1,
+                'name' => 'shop owner 1',
+                'image' => NULL,
+                'gender' => 'female',
+                'phone' => '01222222222',
+                'emergency_phone' => '01222222222',
+                'emergency_relationship' => 'Husband',
+                'present_address' => 'Badda, Dhaka',
+                'permanent_address' => 'same',
+                'nationality_certificate' => 'passport',
+                'nationality_number' => 'EF47328957',
+                'date_of_birth' => '1993-08-11',
+                'tin_number' => '54984165',
+                'bin_number' => '62168554',
+                'email' => 'seller1@tjr.com',
+                'approved_by' => '1',
+                'created_at' => '2023-08-06 16:21:17',
+                'updated_at' => '2023-08-06 16:21:17',
+                'created_by' => '1',
+                'updated_by' => '1',
+                'deleted_at' => NULL,
+                'deleted_by' => NULL,
+                'ip_address' => NULL,
+            ]);
+        }
+
+        $entry = LoginCredential::where('id', 3)->first();
+        if(!$entry)
+        {
+            LoginCredential::insert([
+                'id' => 3,
+                'role' => 'shop_owner',
+                'user_id' => '1',
+                'email' => 'seller1@tjr.com',
+                'phone' => '01222222222',
+                'username' => 'seller1',
+                'password' => '12345678',
+                'verified' => 'yes',
+                'status' => 'active',
+                'created_at' => '2023-08-11 03:50:48',
+                'updated_at' => '2023-08-11 03:50:48'
+            ]);
+        }
     }
 }
