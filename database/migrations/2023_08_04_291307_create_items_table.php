@@ -59,3 +59,31 @@ return new class extends Migration
         Schema::dropIfExists('items');
     }
 };
+
+
+// 'name' => 'Icecream'
+// 'sku' => 'abcacb'
+// 'brief' => 'abcacb'
+// 'description' => 'abcacb'
+// 'image' => 'abcacb'
+// 'has_variation' => 'abcacb'
+// 'shop_id' => 'abcacb'
+// 'category_id' => 'abcacb'
+// 'subcategory_id' => 'abcacb'
+// 'selling_price' => 'abcacb'
+// 'purchase_price' => 'abcacb'
+// 'stock_in' => 'abcacb'
+// 'stock_out' => 'abcacb'
+// 'stock_available' => 'abcacb'
+// 'sold_stock' => 'abcacb'
+// 'damage_stock' => 'abcacb'
+// 'other_stock_out' => 'abcacb'
+// 'total_rate' => 0
+// 'total_rated_person' => 0
+// 'approved_by' => 1
+// 'created_by' => 1
+// 'updated_by' => 1
+// 'created_at' => 'abcacb'
+// 'updated_at' => 'abcacb'
+// 'deleted_at' => 'abcacb'
+// 'deleted_by' => 'abcacb'
